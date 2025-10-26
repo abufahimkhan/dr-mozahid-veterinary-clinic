@@ -32,6 +32,9 @@
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"esbuild"
+		],
+		"allowedBuildDependencies": [
+			"@tailwindcss/oxide"
 		]
 	},
 	"dependencies": {

@@ -25,18 +25,19 @@
     animationFrameId = requestAnimationFrame(scrollMarquee);
   };
 
-  onMount(() => {
-    // Only start scrolling if we are on a mobile device and marqueeRef is present
-    if (window.innerWidth < 768 && marqueeRef) { // Tailwind's `md` breakpoint is 768px
-      // Duplicate images to create a seamless loop
-      images = [...images, ...images];
-      animationFrameId = requestAnimationFrame(scrollMarquee);
-    }
-  });
+onMount(() => {
+  if (typeof window !== 'undefined' && window.innerWidth < 768 && marqueeRef) {
+    images = [...images, ...images];
+    animationFrameId = requestAnimationFrame(scrollMarquee);
+  }
+});
 
-  onDestroy(() => {
+onDestroy(() => {
+  if (typeof window !== 'undefined') {
     cancelAnimationFrame(animationFrameId);
-  });
+  }
+});
+
 </script>
 
 <div bind:this={marqueeRef} class="flex overflow-hidden space-x-4 py-4 md:hidden">
