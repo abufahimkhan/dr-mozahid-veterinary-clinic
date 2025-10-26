@@ -25,8 +25,8 @@ export const navLinks = [
     { name: 'About Us', page: Page.About },
     { name: 'Services', page: Page.Services },
     { name: 'Pricing', page: Page.Pricing },
-    { name: 'Book Appointment', page: Page.Appointment },
 ] as const;
+
 
 export const servicesList: { title: string; description: string; icon: IconType }[] =
     [
