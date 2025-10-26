@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Page } from "$lib/types/types";
   import { navLinks, CLINIC_NAME } from "$lib/constants/constants";
-  import { Menu, X } from "lucide-svelte";
+  import { Menu, X, PhoneIcon } from "lucide-svelte";
   import { allImages } from "$lib/assets/images";
   import { toggleMode } from "mode-watcher";
 
@@ -72,6 +72,13 @@
 
     <!-- Theme + Appointment -->
     <div class="hidden md:flex items-center space-x-4">
+      <a
+        href="tel:+8801716297665"
+        class="flex items-center space-x-2 bg-gradient-to-r from-green-500 to-teal-500 text-white p-2.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-transform"
+      >
+        <PhoneIcon class="w-5 h-5" />
+      </a>
+
       <button
         onclick={() => onNavClick(Page.Appointment)}
         class="bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-5 py-2 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-transform"
@@ -96,7 +103,14 @@
     </div>
 
     <!-- Mobile Menu Toggle -->
-    <div class="md:hidden">
+    <div class="md:hidden flex items-center space-x-4">
+      <a
+        href="tel:+8801716297665"
+        class="w-4/5 flex items-center justify-center space-x-2 bg-gradient-to-r from-green-500 to-teal-500 text-white p-1.5 rounded-full shadow-lg hover:scale-105 transition-transform"
+      >
+        <PhoneIcon class="w-4 h-4" />
+      </a>
+
       <button
         onclick={() => (isMobileMenuOpen = !isMobileMenuOpen)}
         class="text-indigo-600 dark:text-pink-400 hover:scale-110 transition"
